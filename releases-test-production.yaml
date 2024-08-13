@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: namespace-production
+    namespace: akav-namespace-production
   syncPolicy:
     automated:
       prune: false
