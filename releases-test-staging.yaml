@@ -12,7 +12,7 @@ spec:
     targetRevision: HEAD
   destination:
     name: in-cluster
-    namespace: namespace-staging
+    namespace: akav-namespace-staging
   syncPolicy:
     automated:
       prune: false
