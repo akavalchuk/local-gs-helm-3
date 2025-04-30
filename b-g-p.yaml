@@ -8,7 +8,7 @@ spec:
   project: default
   destination:
     name: in-cluster
-    namespace: akav-namespace-staging
+    namespace: akav-namespace-production
   source:
     path: blue-green-1
     repoURL: https://github.com/akavalchuk/argocd-example-apps.git
