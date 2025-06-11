@@ -1,0 +1,23 @@
+# DO NOT REMOVE the following attributes:
+# annotations.codefresh.io/workflow-origin (identifies type of Workflow Template as Promotion Workflow)
+# annotations.version (identifies version of Promotion Workflow used)
+# annotations.description (identifies intended use of the Promotion Workflow)
+apiVersion: argoproj.io/v1alpha1
+kind: WorkflowTemplate
+metadata:
+  name: simple-success-1
+  annotations:
+    version: 0.0.1
+    codefresh.io/workflow-origin: promotion
+    description: "simply echos a message then returns successfully"
+spec:
+  serviceAccountName: promotion-template
+  entrypoint: simple-success
+  templates:
+  - name: simple-success
+    script:
+      image: alpine
+      command:
+      - sh
+      source: |
+        echo "Success!"
