@@ -4,6 +4,8 @@ metadata:
   name: relative-files-app-1
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
+  annotations:
+    codefresh.io/product: relative-files
 spec:
   project: default
   destination:
