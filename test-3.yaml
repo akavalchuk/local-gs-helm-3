@@ -4,15 +4,17 @@ metadata:
   name: test-3
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
+  annotations:
+    codefresh.io/product: test-without-release
 spec:
   project: default
+  destination:
+    name: in-cluster
+    namespace: test-3
   source:
     path: guestbook-3
     repoURL: https://github.com/akavalchuk/argocd-example-apps.git
     targetRevision: HEAD
-  destination:
-    name: in-cluster
-    namespace: test-3
   syncPolicy:
     automated:
       prune: false
