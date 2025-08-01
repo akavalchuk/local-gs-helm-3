@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-test-test-remove
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io/foreground
+  annotations:
+    codefresh.io/product: new-product-test
+spec:
+  project: default
+  destination:
+    name: in-cluster
+    namespace: test-test-test-remove
+  source:
+    path: guestbook-3
+    repoURL: https://github.com/akavalchuk/argocd-example-apps.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
+      allowEmpty: false
+    syncOptions:
+      - PrunePropagationPolicy=foreground
+      - Replace=false
+      - PruneLast=false
+      - Validate=true
+      - CreateNamespace=true
+      - ApplyOutOfSyncOnly=false
+      - ServerSideApply=true
+      - RespectIgnoreDifferences=false
