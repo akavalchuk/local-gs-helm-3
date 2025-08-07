@@ -4,8 +4,6 @@ metadata:
   name: test-test-test-remove
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
-  annotations:
-    codefresh.io/product: product-deletion-test
 spec:
   project: default
   destination:
