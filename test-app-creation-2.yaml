@@ -4,6 +4,8 @@ metadata:
   name: test-app-creation-2
   finalizers:
     - resources-finalizer.argocd.argoproj.io/foreground
+  annotations:
+    codefresh.io/product: product-1
 spec:
   project: default
   destination:
